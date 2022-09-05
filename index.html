@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>大标题</title>
+<style>
+    button{
+        width: 20em;
+        height: 10em;
+    }
+</style>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+</head>
+<body>
+    <p id="aa">aaa</p>
+    <p id="pbb">bb</p>
+    <div>
+        <button id="butt">点我</button>
+        <button id="button">点我加载图片</button>
+    </div>
+    <img id="lue" alt="lue">
+<script>
+    $("#aa").text("hello")
+    let url="你的地址例如192.168"
+    url="./jzz.gif"
+    $("#butt").click(function(){
+        $.get(url,function(data,status){
+            $("#pbb").text("数据: " + data + "\n状态: " + status);
+        });
+    });
+    $("#button").click(function(){
+        $("#lue").attr("src",url);
+    })
+</script>
+</body>
+</html>
